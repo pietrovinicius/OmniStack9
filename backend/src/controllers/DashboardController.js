@@ -7,7 +7,6 @@ module.exports = {
 
         const spots = await Spot.find({ user: user_id });
 
-        Console.log('==================================Dashboard');
         return res.json(spots);
     }
 }

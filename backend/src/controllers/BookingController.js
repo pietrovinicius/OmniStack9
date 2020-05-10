@@ -13,11 +13,7 @@ module.exports = {
         });
 
         await booking.populate('store').populate('user').execPopulate();
-
-        //Exibindo no console
         const temp = await booking.populate('store').populate('user').execPopulate();
-        console.log('Dados registrados:' + temp);
-
         return res.json(booking);
     }
 };
