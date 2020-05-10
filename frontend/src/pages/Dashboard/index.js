@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import './styles.css';
 
 import api from '../../services/api';
 
 export default function Dashboard() {
-    console.log('=============================Dashboard');
 
     const [spots, setSpots] = useState([]);
 
@@ -24,7 +24,7 @@ export default function Dashboard() {
             <ul className='spot-list'>
                 {spots.map(spot => (
                     <li key={spot._id}>
-                        <header />
+                        <header style={{ backgroundImage: `url(${ spot.thumbnail_url })` }} />
                         <strong>{spot.company}</strong>
                         <span>{spot.price}</span>
                     </li>
