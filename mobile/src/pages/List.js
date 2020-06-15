@@ -14,6 +14,7 @@ export default function List() {
       const socket = socketio('http://192.168.0.31:3333', {
         query: { user_id }
       })
+      
 
       socket.on('booking_response', booking => {
         Alert.alert(`Sua reserva em ${booking.spot.company} em ${booking.date} foi ${booking.approved ? 'APROVADA' : 'REJEITADA'}`);
